@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+nav {
+    border: 2px solid black;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+}
+
+nav .leftNav {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 25px;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    width: 60%;
+}
+
+nav .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.nav-items ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.loginBtn {
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    outline: none;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.signBtn {
+    background-color: black;
+    color: rgb(167, 166, 166);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.signBtn:hover {
+    font-size: 17px;
+}
+.loginBtn:hover {
+    font-size: 17px;
+}
+
+.home {
+    background-color: #393939;
+    padding: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+
+.home img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: #393939;
+    padding-left: 20px;
+    margin: 0 20px 0 20px;
+    color: rgb(174, 173, 173);
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    margin-top: 3px;
+    padding: 5px 5px 0 5px;
+}
+
+.leftSide {
+    width: 30vw;
+    margin-right: 10px;
+    background-color: #262525;
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+    object-fit: contain;
+}
+
+.leftSide h2 {
+    font-size: 20px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.leftFooter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: absolute;
+    bottom: 0px;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 20px;
+}
+
+.leftFooter a {
+    text-decoration: none;
+    color: rgb(168, 163, 163);
+}
+
+
+#libraryCards {
+    display: flex;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 55vh;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-color: #686767 #262525;
+    padding: 0px 3px 0px 3px;
+    margin: 0 auto;
+
+}
+
+#libraryCards ul {
+    list-style: decimal;
+    width: 80%;
+
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+#libraryCards ul li {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.playButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 20px 0 20px;
+    align-items: center;
+}
+
+.seekbaar {
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 1s;
+}
+
+.circle {
+    background-color: rgb(147, 145, 145);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1.9px;
+    left: 0%;
+    transition: left 0.5s;
+    transform: translate(-50%, 50%);
+}
+
+.playbar {
+    height: 80px;
+    background-color: white;
+    color: black;
+    width: 60vw;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.timeBtn {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px 0 40px;
+    font-size: 20px;
+}
+
+.playlistCard {
+    border: 2px solid white;
+    width: 200px;
+    background-color: #686767;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.playlistCard img {
+    width: 200px;
+    border-radius: 20px;
+}
+.cross{
+    width: 30px;
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+.rightSide> img{
+    width: 70vw;
+    border-radius: 12px;
+    position: relative;
+    height: 70vh;
+    padding: 10px;
+}
+
+@media (max-width: 850px) {
+    .leftSide {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        right: -120%;
+        top: 10px;
+        width: 300px;
+        height: 90vh;
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .rightSide {
+        width: 100vw;
+        margin-left: 0px;
+        height: 100vh;
+    }
+
+    .playbar {
+        width: 100vw;
+        bottom: 0px;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px 0 0 10px;
+        width: 50px;
+    }
+    .leftNav input{
+        display: none;
+    }
+    .cross{
+        width: 60px;
+        display: block;
+        border: 2px solid white;
+        border-radius: 50%;
+        cursor: pointer;
+
+    }
+
+    .rightSide> img{
+        width: 100vw;
+        border-radius: 20px;
+        position: relative;
+        height: 100vh;
+        padding: 10px;
+    }
+
+    .loginBtn {
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        outline: none;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    
+    .signBtn {
+        font-size: 12px;
+    }
+    
+}
