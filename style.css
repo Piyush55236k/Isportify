@@ -136,16 +136,19 @@ main {
 .leftFooter {
     display: flex;
     flex-wrap: wrap;
+    width: 30%;
     gap: 20px;
-    position: absolute;
-    bottom: 0px;
+    position: fixed;
+    bottom: 5vh;
     font-size: 12px;
     font-weight: 800;
     padding: 20px;
+    z-index: 10;
 }
 
 .leftFooter a {
     text-decoration: none;
+    
     color: rgb(168, 163, 163);
 }
 
@@ -173,9 +176,10 @@ main {
 .info {
     display: flex;
     align-items: center;
+    width: 100%;
     cursor: pointer;
     gap: 20px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #libraryCards ul li {
@@ -225,7 +229,7 @@ main {
     height: 80px;
     background-color: white;
     color: black;
-    width: 60vw;
+    width: 65vw;
     border-radius: 10px;
     position: absolute;
     bottom: 10px;
@@ -241,14 +245,26 @@ main {
 .playlistCard {
     border: 2px solid white;
     width: 200px;
+    height: 200px;
     background-color: #686767;
     border-radius: 10px;
     padding: 10px;
 }
 
+.container{
+    display: flex;
+    gap: 20px;
+    overflow-y: scroll;
+    height: 60vh;
+    scroll-behavior: smooth;
+    scrollbar-color: #b6b5b5 #262525;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+}
 .playlistCard img {
     width: 200px;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 .cross{
     width: 30px;
@@ -260,25 +276,31 @@ main {
     cursor: pointer;
     padding: 10px;
 }
-.rightSide> img{
-    width: 70vw;
+.rightSide{
+    width: 65vw;
     border-radius: 12px;
+    background-color: #262525;
     position: relative;
-    height: 70vh;
+    height: 80vh;
     padding: 10px;
 }
 
 @media (max-width: 850px) {
     .leftSide {
-        position: absolute;
+        position: fixed;
         display: none;
         z-index: 1;
         right: -120%;
         top: 10px;
         width: 300px;
-        height: 90vh;
+        height: 95vh;
         border-radius: 10px;
         transition: all 0.5s ease-in-out;
+    }
+
+    .leftFooter{
+        width: 100%;
+        bottom: 20px;
     }
 
     .rightSide {
@@ -310,14 +332,20 @@ main {
 
     }
 
-    .rightSide> img{
+    .rightSide{
         width: 100vw;
         border-radius: 20px;
+        background-color: #262525;
         position: relative;
         height: 100vh;
         padding: 10px;
     }
+    .container{
+        overflow-y: auto;
+        height: 100%;
+    }
 
+    
     .loginBtn {
         border: none;
         font-size: 15px;
@@ -333,5 +361,27 @@ main {
     .signBtn {
         font-size: 12px;
     }
-    
+
+    .card {
+        width: 100%;
+        background-color: #686767;
+
+    }
+
+    .playlistCard {
+        width: 100%;
+        min-height: max-content;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .playlistCard img {
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    .playbar{
+        position: fixed;
+        padding: 5px;
+    }
 }
