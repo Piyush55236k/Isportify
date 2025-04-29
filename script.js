@@ -113,7 +113,7 @@ async function displayAlbums() {
         const e = array[index];
         // console.log(e.href);
         if (e.href.includes("/Songs/")) {
-             console.log(e.href.split("/").slice(-2)[1]);
+             //console.log(e.href.split("/").slice(-2)[1]);
             let folder = e.href.split("/").slice(-2)[1];
             //meta data for folder
             let albums = await fetch(`Assets/Songs/${folder}/info.json`);
