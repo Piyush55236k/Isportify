@@ -142,7 +142,7 @@ async function displayAlbums() {
 }
 
 async function getSongNames() {
-    await getSongs(`Songs/English/`);
+    await getSongs(`Songs/Hindi/`);
     playMusic(songsList[0], true);
 
     //show albums
