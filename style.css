@@ -11,11 +11,10 @@ body {
 nav {
     border: 2px solid black;
     display: flex;
-    gap: 20px;
     align-items: center;
     justify-content: space-between;
     background-color: black;
-    width: 100vw;
+    width: 95dvw;
     height: 60px;
 }
 
@@ -26,7 +25,7 @@ nav .leftNav {
     align-items: center;
     gap: 20px;
     cursor: pointer;
-    width: 60%;
+    width: 40%;
 }
 
 nav .nav-items {
@@ -103,7 +102,6 @@ nav .nav-items {
     padding-left: 20px;
     margin: 0 20px 0 20px;
     color: rgb(174, 173, 173);
-    cursor: pointer;
 }
 
 main {
@@ -155,6 +153,9 @@ main {
 
 #libraryCards {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
     border-radius: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -167,11 +168,6 @@ main {
 
 }
 
-#libraryCards ul {
-    list-style: decimal;
-    width: 80%;
-
-}
 
 .info {
     display: flex;
@@ -182,34 +178,27 @@ main {
     justify-content: space-between;
 }
 
-#libraryCards ul li {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    cursor: pointer;
-    align-items: center;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    margin-top: 10px;
-}
 
 .playButtons {
     display: flex;
     gap: 20px;
+    padding : 10px 0px 10px 0px;
     justify-content: center;
-    padding: 10px 20px 0 20px;
     align-items: center;
 }
+.playContainer{
+    position: relative;
 
+}
 .seekbaar {
     width: 100%;
-    height: 5px;
+    height: 8px;
     background-color: #000000;
     border-radius: 10px;
+    bottom: 0px;
     cursor: pointer;
-    position: relative;
+    justify-content: center;
+    position: absolute;
     transition: all 1s;
 }
 
@@ -219,17 +208,19 @@ main {
     height: 15px;
     border-radius: 50%;
     position: absolute;
-    bottom: 1.9px;
+    bottom: 3.5px;
     left: 0%;
     transition: left 0.5s;
     transform: translate(-50%, 50%);
 }
 
 .playbar {
-    height: 80px;
+    height: 100px;
     background-color: white;
     color: black;
-    width: 65vw;
+    width: 62dvw;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 10px;
     position: absolute;
     bottom: 10px;
@@ -243,26 +234,60 @@ main {
 }
 
 .playlistCard {
+    display: flex;
+    gap: 30px;
     border: 2px solid white;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 70%;
     background-color: #686767;
     border-radius: 10px;
-    padding: 10px;
+    padding: 6px 6px 0 6px;
+}
+
+.playlistCard:hover{
+    transform: scale(1.03);
+    transition: all 0.2s;
+}
+.card {
+    width: 90%;
+    height: 70%;
+
+}
+.playlistInfo{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .container{
     display: flex;
-    gap: 20px;
+    padding: 20px;
+    gap: 15px;
     overflow-y: scroll;
-    height: 60vh;
+    height: 50dvh;
     scroll-behavior: smooth;
     scrollbar-color: #b6b5b5 #262525;
     overflow-x: hidden;
     flex-wrap: wrap;
 }
+
+.container ul{
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container ul li{
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    gap: 20px;
+}
 .playlistCard img {
-    width: 200px;
+    width: 70px;
+    height: 70px;
     border-radius: 20px;
     margin-bottom: 20px;
 }
@@ -274,15 +299,19 @@ main {
 .hamburger {
     display: none;
     cursor: pointer;
-    padding: 10px;
 }
 .rightSide{
-    width: 65vw;
+    width: 65dvw;
     border-radius: 12px;
     background-color: #262525;
     position: relative;
-    height: 80vh;
+    height: 80dvh;
     padding: 10px;
+}
+
+.rightSide h2{
+    margin-left: 20px;
+    padding-bottom: 10px;
 }
 
 @media (max-width: 850px) {
@@ -313,75 +342,121 @@ main {
         width: 100vw;
         bottom: 0px;
     }
-
+    .nav{
+        position : sticky;
+        top : 0;
+        width: 90%;
+    }
     .hamburger {
         display: block;
         cursor: pointer;
-        padding: 10px 0 0 10px;
         width: 50px;
     }
     .leftNav input{
         display: none;
     }
     .cross{
-        width: 60px;
+        width: 50px;
         display: block;
-        border: 2px solid white;
-        border-radius: 50%;
-        cursor: pointer;
-
+        transition: all 1s;
     }
-
+    .rightSide h2{
+        margin-left: 35%;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
     .rightSide{
-        width: 100vw;
+        width: 90dvw;
         border-radius: 20px;
         background-color: #262525;
         position: relative;
-        height: 100vh;
+        height: 80dvh;
         padding: 10px;
     }
     .container{
-        overflow-y: auto;
-        height: 100%;
+        overflow-y: scroll;
     }
 
     
     .loginBtn {
-        border: none;
-        font-size: 15px;
+        width : 70px;
+        font-size: 12px;
         font-weight: 600;
-        color: rgb(0, 0, 0);
-        outline: none;
         background-color: #ffffff;
-        padding: 10px;
-        border-radius: 30px;
-        cursor: pointer;
+        padding: 7px;
     }
     
     .signBtn {
         font-size: 12px;
+        width : 50px;
     }
 
-    .card {
-        width: 100%;
-        background-color: #686767;
+    .container{
+        display: flex;
+        gap: 10px;
+    }
+    
+    .timeBtn{
+        font-size: 12px;
+        width: 80%;
+        height: 30px;
+        display: block;
+        gap: 20px;
+    }
+    .songTime{
+        padding: 10px 0px 0px 0px;
+        font-weight: bolder;
+    }
+    .songInfo{
+        font-weight: bold;
+    }
+    .playbar> :nth-child(1){
+        padding: 10px 10px 20px 0px;
+        gap: 20px;
+    }
+    .playbar> :nth-child(2){
+        padding: 10px 10px 5px 0px;
+    }
+    nav .leftNav{
+        width: fit-content;
+    }
+    .playbar{
+        position: absolute;
+        bottom : 0px;
+        width: 80%;
+        height : 130px;
+    }
 
+    nav{
+        width: 98%;
     }
 
     .playlistCard {
+        display: flex;
+        gap: 10px;
+        border: 2px solid white;
         width: 100%;
-        min-height: max-content;
+        background-color: #686767;
         border-radius: 10px;
-        padding: 10px;
+        padding: 6px 6px 6 6px;
+    }
+    
+    .playlistCard:hover{
+        transform: scale(1.03);
+        transition: all 0.2s;
+    }
+    .card {
+        width: 90%;
+        height: 50%;
+        gap: 0;;
+    
+    }
+    .playlistInfo{
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .playlistCard img {
-        width: 100%;
-        border-radius: 20px;
-        margin-bottom: 20px;
-    }
-    .playbar{
-        position: fixed;
-        padding: 5px;
-    }
 }

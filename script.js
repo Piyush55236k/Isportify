@@ -2,8 +2,9 @@ let currfolder;
 let circle = document.querySelector(".circle");
 let currentSong = new Audio();
 let songs;
-let cards = document.querySelector(".container");
+let cards = document.querySelector(".container ul");
 let songsList = [];
+let cardList = document.querySelector("#libraryCards");
 
 // const imgCover = document.querySelector(".rightSide").getElementsByTagName("img")[0];
 
@@ -65,10 +66,10 @@ async function getSongs(folder) {
         songsList.sort((a, b) => a.localeCompare(b));
 
         // Populate the library list
-        let cardList = document.querySelector("#libraryCards ul");
-        cardList.innerHTML = "";
+        
+        cards.innerHTML = "";
         for (const song of songsList) {
-            cardList.innerHTML += `
+            cards.innerHTML += `
                 <li>
                     <img src="Assets/favicons/music-1005-svgrepo-com.svg" width="20px" height="20px">
                     <div class="info">
@@ -79,7 +80,7 @@ async function getSongs(folder) {
         }
 
         // Add click event listeners to play songs
-        Array.from(cardList.getElementsByTagName("li")).forEach(e => {
+        Array.from(cards.getElementsByTagName("li")).forEach(e => {
             e.addEventListener("click", () => {
                 playMusic(e.querySelector(".info p").innerHTML.trim());
             });
@@ -118,7 +119,7 @@ async function displayAlbums() {
             //meta data for folder
             let albums = await fetch(`Assets/Songs/${folder}/info.json`);
             let response = await albums.json();
-            cards.innerHTML = cards.innerHTML + ` <div class="card" data-folder="${folder}">
+            cardList.innerHTML = cardList.innerHTML + ` <div class="card" data-folder="${folder}">
                     <div class="playlistCard">
                         <img src="Assets/Songs/${folder}/cover.PNG" alt="image">
                         <div class="playlistInfo">
@@ -142,7 +143,7 @@ async function displayAlbums() {
 }
 
 async function getSongNames() {
-    await getSongs(`Songs/English/`);
+    await getSongs(`Songs/Hindi/`);
     playMusic(songsList[0], true);
 
     //show albums
